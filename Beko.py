@@ -37,37 +37,51 @@ def nmap():
 
     if (processNo == "1"):
         os.system("nmap " + ip)
+        nmap()
     elif (processNo == "2"):
         os.system("nmap -sC -sV " + ip)
+        nmap()
     elif (processNo == "3"):
         os.system("nmap " + ip + " -max-parallelism 10000 -Pn --script http-slowloris --script-args http-slowloris.run forever=True")
+        nmap()
     elif (processNo == "4"):
         sTbasicport = input("enter url: ")
         os.system("nmap -sT -v " + sTbasicport)
+        nmap()
     elif (processNo == "5"):
         os.system("nmap -p- " + ip)
+        nmap()
     elif (processNo == "6"):
         os.system("nmap -sV " + ip)
+        nmap()
     elif (processNo == "7"):
         os.system("nmap -sS " + ip)
+        nmap()
     elif (processNo == "8"):
         os.system("nmap -sU " + ip)
+        nmap()
     elif (processNo == "9"):
         os.system("nmap -sA " + ip)
+        nmap()
     elif (processNo == "10"):
         os.system("nmap -sW " + ip)
+        nmap()
     elif (processNo == "11"):
         os.system("nmap -sM " + ip)
+        nmap()
     elif (processNo == "12"):
         firstport = input("First Port: ")
         secondport = input("Second Port: ")
         os.system("nmap -p "+firstport+"-"+secondport)
+        nmap()
     elif (processNo == "13"):
         port13 = input("Enter Port: ")
         os.system("nmap -p " + port13 + " " + ip)
+        nmap()
     elif (processNo == "14"):
         dosyakonumu14 = input("(should be in this folder) Enter file name: ")
         os.system("nmap -iL "+dosyakonumu14)
+        nmap()
 
 def sqlmap():
     print(Fore.GREEN + """
@@ -94,15 +108,16 @@ def sqlmap():
 
     if (processNo == "1"):
         os.system("sqlmap -u " + parameter + " --dbs")
-
-    if (processNo == "tablo"):
+        sqlmap()
+    if (processNo == "2"):
         tablo1 = input("Enter Table Name: ")
         os.system("sqlmap -u " + parameter + " -T " + tablo1)
-
-    if (processNo == "tablo & Users"):
+        sqlmap()
+    if (processNo == "3"):
         tablo2 = input(Fore.CYAN+"Enter Table: ")
         user1 = input(Fore.CYAN+"Enter User: ")
         os.system("sqlmap -u " + parameter + " -T " + tablo2 + "-U " + user1)
+        sqlmap()
 
 def reconcobra():
     print(Fore.GREEN + """
@@ -127,10 +142,13 @@ def reconcobra():
 
     if (number == "1"):
         os.system("perl ReconCobra.pl -t "+rurl)
+        reconcobra()
     if (number == "2"):
         os.system("python censys.py -d "+rurl)
+        reconcobra()
     if (number == "3"):
         os.system("bash dnsbrute.sh -d "+rurl)
+        reconcobra()
 
 
 
