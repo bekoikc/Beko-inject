@@ -115,6 +115,7 @@ def reconcobra():
 
               1-       Take İnfo 
               2-       Censys Database Search
+              3-       DNS Brute Force Attack
 
     -----------------------------------------------------
 
@@ -128,7 +129,7 @@ def reconcobra():
         os.system("perl ReconCobra.pl -t "+rurl)
     if (number == "2"):
         os.system("python censys.py -d "+rurl)
-    if (number == "4"):
+    if (number == "3"):
         os.system("bash dnsbrute.sh -d "+rurl)
 
 
